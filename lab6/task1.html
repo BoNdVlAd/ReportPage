@@ -67,23 +67,25 @@
             </p>
           <h2>Код 1 завдання</h2>
           <xmp>
-            function showText() {
-              var inputText = document.getElementById("inputText").value;
+            function showMe() {
+              let inputText = document.getElementById("inputText").value;
               document.getElementById("outputText").innerHTML = inputText;
+              console.log(inputText)
           }
           </xmp>
           <h2>Виконання 1 завдання</h2>
-	        <h1>Введіть текст:</h1>
+	        <p>ЗАВДАННЯ 1</p>
+          <button onclick="showMe()">SHOW ME</button>
 	        <input type="text" id="inputText">
-	        <button onclick="showText()">Вивести текст</button>
 	        <p id="outputText"></p>
 
       </div>
     </main>
     <script>
-      function showText() {
-        var inputText = document.getElementById("inputText").value;
+      function showMe() {
+        let inputText = document.getElementById("inputText").value;
         document.getElementById("outputText").innerHTML = inputText;
+        console.log(inputText)
     }
     </script>
 

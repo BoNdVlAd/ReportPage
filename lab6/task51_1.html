@@ -73,36 +73,43 @@
             const id = Math.floor(Math.random() * 10000);
             const product = { ...obj, id };
             callback(product);
-          }
-          function logProduct(product) {
-             console.log(product);
-          }
-          function logTotalPrice(product) {
-              console.log(`Загальна вартість товару: ${product.price * product.quantity}`);
-          }
-          const product = { name: 'Огірок', price: 123, quantity: 10 };
-          createProduct(product, logProduct);  
-          createProduct(product, logTotalPrice); 
+            }
+            function logProduct(product) {
+              console.log(product);
+            }
+          
+            function logTotalPrice(product) {
+              const totalPrice = product.price * product.quantity;
+              console.log(`Total Price: ${totalPrice}`);
+            }
+            const sampleProduct = { name: 'pizza', price: 20, quantity: 2 };
+            
+            createProduct(sampleProduct, logProduct);
+            createProduct(sampleProduct, logTotalPrice);
          </xmp>
 
       </div>
     </main>
 
-    <script>
-      function createProduct(obj, callback) {
-        const id = Math.floor(Math.random() * 10000);
-        const product = { ...obj, id };
-        callback(product);
-      }
-      function logProduct(product) {
-         console.log(product);
-      }
-      function logTotalPrice(product) {
-          console.log(`Загальна вартість товару: ${product.price * product.quantity}`);
-      }
-      const product = { name: 'Огірок', price: 123, quantity: 10 };
-      createProduct(product, logProduct);  
-      createProduct(product, logTotalPrice); 
-    </script>
+  <script>
+  function createProduct(obj, callback) {
+  const id = Math.floor(Math.random() * 10000);
+  const product = { ...obj, id };
+  callback(product);
+  }
+  function logProduct(product) {
+    console.log(product);
+  }
+
+  function logTotalPrice(product) {
+    const totalPrice = product.price * product.quantity;
+    console.log(`Total Price: ${totalPrice}`);
+  }
+  const sampleProduct = { name: 'pizza', price: 20, quantity: 2 };
+
+  createProduct(sampleProduct, logProduct);
+  createProduct(sampleProduct, logTotalPrice);
+ 
+  </script>
   </body>
 </html>

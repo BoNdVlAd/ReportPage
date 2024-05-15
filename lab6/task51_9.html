@@ -83,17 +83,18 @@
                 { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
             ];
 
-            const tagCounts = tweets.reduce((acc, tweet) => {
-                tweet.tags.forEach(tag => {
-                    if (!acc[tag]) {
-                        acc[tag] = 0;
-                    }
-                    acc[tag]++;
-                });
-                return acc;
-            }, {});
-
-            console.log(tagCounts); 
+            function countTags(tweets) {
+              const tagCounts = {};
+              tweets.forEach(tweet => {
+                  tweet.tags.forEach(tag => {
+                      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+                  });
+              });
+              return tagCounts;
+          }
+          
+          const tagCounts = countTags(tweets);
+          console.log(tagCounts);
 
           </xmp>
       </div>
@@ -108,17 +109,18 @@
                { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
        ];
 
-       const tagCounts = tweets.reduce((acc, tweet) => {
-         tweet.tags.forEach(tag => {
-           if (!acc[tag]) {
-             acc[tag] = 0;
-             }
-             acc[tag]++;
-             });
-             return acc;
-           }, {});
-
-       console.log(tagCounts); 
+      function countTags(tweets) {
+        const tagCounts = {};
+        tweets.forEach(tweet => {
+            tweet.tags.forEach(tag => {
+                tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+            });
+        });
+        return tagCounts;
+    }
+    
+    const tagCounts = countTags(tweets);
+    console.log(tagCounts);
 
    </script>
   </body>

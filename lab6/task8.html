@@ -87,18 +87,18 @@
             document.querySelector('.login-form').addEventListener('submit', function(event) {
               event.preventDefault();
             
-              var email = event.target.elements.email.value.trim();
-              var password = event.target.elements.password.value.trim();
+              let email = event.target.elements.email.value.trim();
+              let password = event.target.elements.password.value.trim();
             
               if (!email || !password) {
                 alert('All form fields must be filled in');
                 return;
               }
-              let formData = {
+              let Data = {
                 email: email,
                 password: password
               };
-              console.log(formData);
+              console.log(ata);
               event.target.reset();
             });
           </xmp>
@@ -123,18 +123,18 @@
       document.querySelector('.login-form').addEventListener('submit', function(event) {
         event.preventDefault();
       
-        var email = event.target.elements.email.value.trim();
-        var password = event.target.elements.password.value.trim();
+        let email = event.target.elements.email.value.trim();
+        let password = event.target.elements.password.value.trim();
       
         if (!email || !password) {
           alert('All form fields must be filled in');
           return;
         }
-        let formData = {
+        let Data = {
           email: email,
           password: password
         };
-        console.log(formData);
+        console.log(Data);
         event.target.reset();
       });
       
