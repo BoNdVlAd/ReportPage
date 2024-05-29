@@ -30,9 +30,9 @@
         <a href="../lab4/4lab.html" class="lab">Лабораторна робота №4</a>
         <a href="../lab5/5lab.html" class="lab">Лабораторна робота №5</a>
         <a href="6lab.html" class="lab">Лабораторна робота №6</a>
-        <a href="#" class="lab">Лабораторна робота №7</a>
-        <a href="#" class="lab">Лабораторна робота №8</a>
-        <a href="#" class="lab">Лабораторна робота №9</a>
+        <a href="../lab7/7lab.html" class="lab">Лабораторна робота №7</a>
+        <a href="../lab8/8lab.html" class="lab">Лабораторна робота №8</a>
+        <a href="../lab9/9lab.html" class="lab">Лабораторна робота №9</a>
       </div>
       <div class="labs-content">
         <div class="list">
@@ -67,8 +67,8 @@
           <xmp>
             <div id="controls">
               <input type="number" min="1" max="100" step="1" />
-              <button type="button" data-create>Create</button>
-              <button type="button" data-destroy>Destroy</button>
+              <button type="button" data-create>Створити блок</button>
+              <button type="button" data-destroy>Знищити блок</button>
             </div>
             <div id="boxes"></div>
           </xmp>
@@ -96,43 +96,44 @@
                 .padStart(6, 0)}`;
             }
             
-            function createBoxes(amount) {
+            function createBoxes(count) {
               const boxesContainer = document.querySelector('#boxes');
               boxesContainer.innerHTML = '';
-            
-              for (let i = 0; i < amount; i++) {
+    
+    
+              Array.from({ length: count }).forEach((_, i) => {
                 const box = document.createElement('div');
-                box.style.width = `${30 + i * 10}px`;
-                box.style.height = `${30 + i * 10}px`;
-                box.style.backgroundColor = getRandomHexColor();
+                box.style.cssText = `
+                    width: ${30 + i * 10}px;
+                    height: ${30 + i * 10}px;
+                    background-color: ${getRandomHexColor()};
+                `;
                 boxesContainer.appendChild(box);
-              }
+            });
+    
+    
             }
-            
             function destroyBoxes() {
               document.querySelector('#boxes').innerHTML = '';
             }
-            
             document.querySelector('[data-create]').addEventListener('click', function() {
               const input = document.querySelector('input[type="number"]');
-              const amount = input.value;
+              const count = input.value;
             
-              if (amount < 1 || amount > 100) {
+              if (count < 1 || count > 100) {
                 alert('Введіть число від 1 до 100');
                 return;
               }
-            
-              createBoxes(amount);
+              createBoxes(count);
               input.value = '';
             });
-            
             document.querySelector('[data-destroy]').addEventListener('click', destroyBoxes);
           </xmp>
           <h2>Виконання 10 завдання</h2>
          <div id="controls">
           <input type="number" min="1" max="100" step="1" />
-          <button type="button" data-create>Create</button>
-          <button type="button" data-destroy>Destroy</button>
+          <button type="button" data-create>Створити блок</button>
+          <button type="button" data-destroy>Знищити блок</button>
         </div>
         
         <div id="boxes"></div>
@@ -145,30 +146,34 @@
             .padStart(6, 0)}`;
         }
         
-        function createBoxes(amount) {
+        function createBoxes(count) {
           const boxesContainer = document.querySelector('#boxes');
           boxesContainer.innerHTML = '';
-        
-          for (let i = 0; i < amount; i++) {
+
+
+          Array.from({ length: count }).forEach((_, i) => {
             const box = document.createElement('div');
-            box.style.width = `${30 + i * 10}px`;
-            box.style.height = `${30 + i * 10}px`;
-            box.style.backgroundColor = getRandomHexColor();
+            box.style.cssText = `
+                width: ${30 + i * 10}px;
+                height: ${30 + i * 10}px;
+                background-color: ${getRandomHexColor()};
+            `;
             boxesContainer.appendChild(box);
-          }
+        });
+
         }
         function destroyBoxes() {
           document.querySelector('#boxes').innerHTML = '';
         }
         document.querySelector('[data-create]').addEventListener('click', function() {
           const input = document.querySelector('input[type="number"]');
-          const amount = input.value;
+          const count = input.value;
         
-          if (amount < 1 || amount > 100) {
+          if (count < 1 || count > 100) {
             alert('Введіть число від 1 до 100');
             return;
           }
-          createBoxes(amount);
+          createBoxes(count);
           input.value = '';
         });
         document.querySelector('[data-destroy]').addEventListener('click', destroyBoxes);

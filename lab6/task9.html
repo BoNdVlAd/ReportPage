@@ -30,9 +30,9 @@
         <a href="../lab4/4lab.html" class="lab">Лабораторна робота №4</a>
         <a href="../lab5/5lab.html" class="lab">Лабораторна робота №5</a>
         <a href="6lab.html" class="lab">Лабораторна робота №6</a>
-        <a href="#" class="lab">Лабораторна робота №7</a>
-        <a href="#" class="lab">Лабораторна робота №8</a>
-        <a href="#" class="lab">Лабораторна робота №9</a>
+        <a href="../lab7/7lab.html" class="lab">Лабораторна робота №7</a>
+        <a href="../lab8/8lab.html" class="lab">Лабораторна робота №8</a>
+        <a href="../lab9/9lab.html" class="lab">Лабораторна робота №9</a>
       </div>
       <div class="labs-content">
         <div class="list">
@@ -65,7 +65,7 @@
           <xmp>
             <div class="widget">
               <p>Background color: <span class="color">-</span></p>
-              <button type="button" class="change-color">Change color</button>
+              <button type="button" class="change-color">Колір фону</button>
             </div>
           </xmp>
           <p>Для генерування випадкового кольору використовуй функцію getRandomHexColor().</p>
@@ -85,15 +85,15 @@
                   .padStart(6, 0)}`;
               }
               document.querySelector('.change-color').addEventListener('click', function() {
-                var newColor = getRandomHexColor();
+                let newColor = getRandomHexColor();
                 document.body.style.backgroundColor = newColor;
                 document.querySelector('.color').textContent = newColor;
               });
             </xmp>
             <h2>Виконання 9 завдання</h2>
          <div class="widget">
-          <p>Background color: <span class="color">-</span></p>
-          <button type="button" class="change-color">Change color</button>
+          <p>Колір: <span class="color">-</span></p>
+          <button type="button" class="change-color">Колір фону</button>
         </div>
       </div>
     </main>
@@ -105,7 +105,7 @@
           .padStart(6, 0)}`;
       }
       document.querySelector('.change-color').addEventListener('click', function() {
-        var newColor = getRandomHexColor();
+        let newColor = getRandomHexColor();
         document.body.style.backgroundColor = newColor;
         document.querySelector('.color').textContent = newColor;
       });
